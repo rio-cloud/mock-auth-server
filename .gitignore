@@ -1,0 +1,12 @@
+### Intellij ###
+# IntelliJ
+out/
+.idea/
+*.iml
+
+# Package Files #
+*.jar
+
+### Gradle ###
+.gradle
+build/
