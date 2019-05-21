@@ -5,6 +5,24 @@
 
 Integrate a mock auth server within your Kotlin application to issue tokens for development and testing purpose.
 
+## Include library
+
+Currently only SNAPSHOTS are available at the sonatype snapshot repository. Add the following to your
+`buidl.gradle.kts`.
+
+```kotlin
+repositories {
+    maven {
+        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
+    }
+}
+
+dependencies {
+    implementation("cloud.rio:mock-auth-server:0.1.0-SNAPSHOT")
+}
+```
+
+
 ## Usage
 
 Within a (integration) test that requires a token
@@ -12,14 +30,18 @@ Within a (integration) test that requires a token
 ```kotlin
 import cloud.rio.iam.auth.MockAuthServer
 
-MockAuthServer().use {
-    val port = it.start()
-    
-    // do request a token on the random selected port on localhost   
-    
-    // do some code/tests with the token
-    
-    // server is closed automatically after the use-block 
+fun test() {
+
+    MockAuthServer().use {
+        val port = it.start()
+        
+        // do request a token on the random selected port on localhost   
+        
+        // do some code/tests with the token
+        
+        // server is closed automatically after the use-block 
+    }
+
 }
 ```
 
