@@ -97,7 +97,8 @@ data class ExampleClaims(
     val exp: Long = LocalDateTime.ofEpochSecond(iat, 0, ZoneOffset.UTC)
         .plusSeconds(60).toEpochSecond(ZoneOffset.UTC),
     val account: String = "acme",
-    val tenant: String = "prod"
+    val tenant: String = "prod",
+    val azp: String = "client-id"
 )
 
 private fun ClaimsMessage.toJWTClaimSet(): JWTClaimsSet {
