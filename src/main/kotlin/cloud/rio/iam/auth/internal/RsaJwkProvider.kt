@@ -1,6 +1,7 @@
 package cloud.rio.iam.auth.internal
 
 import cloud.rio.iam.auth.JwkProvider
+import com.nimbusds.jose.Algorithm
 import com.nimbusds.jose.jwk.KeyUse
 import com.nimbusds.jose.jwk.RSAKey
 import java.security.KeyPairGenerator
@@ -27,6 +28,7 @@ internal class RsaJwkProvider : JwkProvider {
             .privateKey(keyPair.private as RSAPrivateKey)
             .keyUse(KeyUse.SIGNATURE)
             .keyID(UUID.randomUUID().toString())
+            .algorithm(Algorithm("RS256"))
             .build()
     }
 }
