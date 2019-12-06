@@ -1,22 +1,22 @@
 plugins {
     base
     java
-    val kotlinVersion = "1.3.31"
+    val kotlinVersion = "1.3.61"
     kotlin("jvm") version kotlinVersion
     `maven-publish`
     signing
 }
 
-version = "0.1.0-SNAPSHOT"
+version = "0.2.0-SNAPSHOT"
 group = "cloud.rio"
 
 repositories {
     jcenter()
 }
 
-val junitVersion = "5.4.2"
-val junitPlatformVersion = "1.4.2"
-val http4kVersion = "3.140.0"
+val junitVersion = "5.5.2"
+val junitPlatformVersion = "1.5.2"
+val http4kVersion = "3.200.0"
 
 val repositoryUser: String by project
 val repositoryPassword: String by project
@@ -28,13 +28,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.1")
 
     implementation("org.http4k:http4k-core:$http4kVersion")
     implementation("org.http4k:http4k-server-jetty:$http4kVersion")
     implementation("org.http4k:http4k-format-jackson:$http4kVersion")
 
-    implementation("com.nimbusds:nimbus-jose-jwt:7.1")
+    implementation("com.nimbusds:nimbus-jose-jwt:8.2.1")
 
     // Test
     testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
@@ -43,8 +43,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
 
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.14")
-    testImplementation("com.squareup.okhttp3:okhttp:3.14.1")
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.20")
+    testImplementation("com.squareup.okhttp3:okhttp:4.2.2")
     testImplementation("org.skyscreamer:jsonassert:1.5.0")
 }
 

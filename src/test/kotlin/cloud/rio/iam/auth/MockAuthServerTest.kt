@@ -6,10 +6,10 @@ import com.nimbusds.jose.JWSObject
 import com.nimbusds.jose.jwk.JWKSet
 import com.nimbusds.jwt.JWTParser
 import com.nimbusds.jwt.SignedJWT
-import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import org.junit.jupiter.api.Test
 import org.skyscreamer.jsonassert.JSONAssert
 import org.skyscreamer.jsonassert.JSONCompareMode
@@ -61,7 +61,7 @@ class MockAuthServerTest {
 
             // When
             client.newCall(request).execute().use { response ->
-                val actualBody = response.body()?.string()
+                val actualBody = response.body?.string()
 
                 // Then
                 assertThat(response.isSuccessful).isTrue()
@@ -88,12 +88,12 @@ class MockAuthServerTest {
 
             val request = Request.Builder()
                 .url("http://localhost:${it.port()}/token")
-                .method("POST", RequestBody.create(MediaType.get("application/json"), requestBody))
+                .method("POST", requestBody.toRequestBody("application/json".toMediaType()))
                 .build()
 
             // When
             client.newCall(request).execute().use { response ->
-                val actualBody = response.body()?.string()
+                val actualBody = response.body?.string()
 
                 // Then
                 assertThat(response.isSuccessful).isTrue()
@@ -134,7 +134,7 @@ class MockAuthServerTest {
 
             // When
             client.newCall(request).execute().use { response ->
-                val actualBody = response.body()?.string()
+                val actualBody = response.body?.string()
 
                 // Then
                 assertThat(response.isSuccessful).isTrue()
