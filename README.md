@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/rio-cloud/mock-auth-server.svg?branch=master)](https://travis-ci.com/rio-cloud/mock-auth-server)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/cloud.rio/mock-auth-server?label=mock-auth-server&server=https%3A%2F%2Foss.sonatype.org)
+[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/cloud.rio/mock-auth-server?server=https%3A%2F%2Foss.sonatype.org&label=Sonatype%20Nexus%20%28Snapshots%29)](https://oss.sonatype.org/#nexus-search;gav~cloud.rio~mock-auth-server~~~)
 
 # Mock Auth Server
 
