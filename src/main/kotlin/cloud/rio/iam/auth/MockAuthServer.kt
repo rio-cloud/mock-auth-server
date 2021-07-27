@@ -3,6 +3,7 @@ package cloud.rio.iam.auth
 import cloud.rio.iam.auth.internal.JwksProvider
 import cloud.rio.iam.auth.internal.RsaJwkProvider
 import cloud.rio.iam.auth.internal.RsaSignedJwtCreator
+import com.nimbusds.jose.util.JSONObjectUtils
 import com.nimbusds.jwt.JWTClaimsSet
 import org.http4k.core.Body
 import org.http4k.core.Method
@@ -53,7 +54,7 @@ class MockAuthServer(
     }
 
     private fun handleJWKS(): Response {
-        return Response(OK).body(jwksProvider.jwks().toJSONObject().toJSONString())
+        return Response(OK).body(JSONObjectUtils.toJSONString(jwksProvider.jwks().toJSONObject()))
     }
 
     private fun handleOpenIDConfiguration(): Response {
