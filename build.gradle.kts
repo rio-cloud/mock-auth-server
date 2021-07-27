@@ -1,13 +1,13 @@
 plugins {
     base
     java
-    val kotlinVersion = "1.3.61"
+    val kotlinVersion = "1.4.20"
     kotlin("jvm") version kotlinVersion
     `maven-publish`
     signing
 }
 
-version = "0.2.0-SNAPSHOT"
+version = "0.3.0-SNAPSHOT"
 group = "cloud.rio"
 
 repositories {
@@ -28,13 +28,13 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.10.1")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.4")
 
     implementation("org.http4k:http4k-core:$http4kVersion")
     implementation("org.http4k:http4k-server-jetty:$http4kVersion")
     implementation("org.http4k:http4k-format-jackson:$http4kVersion")
 
-    implementation("com.nimbusds:nimbus-jose-jwt:8.2.1")
+    implementation("com.nimbusds:nimbus-jose-jwt:9.10")
 
     // Test
     testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
