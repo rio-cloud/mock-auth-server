@@ -16,7 +16,7 @@ repositories {
 
 val junitVersion = "5.5.2"
 val junitPlatformVersion = "1.5.2"
-val http4kVersion = "3.200.0"
+val http4kVersion = "4.11.0.1"
 
 val repositoryUser: String by project
 val repositoryPassword: String by project
